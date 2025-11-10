@@ -1,0 +1,13 @@
+|------------------------------------------+--------------------+--------------------------------------------------------------------------------------------------------|
+| commit                                   | bug category       | bug description                                                                                        |
+|------------------------------------------+--------------------+--------------------------------------------------------------------------------------------------------|
+| 77620d1267392b1a34bfc437d2adea3006f95865 | double free        | new_data can be potentially freed twice                                                                |
+| c9e31900b54cadf5398dfb838c0a63effa1defec | memory leak        | memory leak in free_states() because of incorrect env->scc_cnt tracing                                 |
+| 0e521efaf36350b8f783984541efa56f560c90b0 | oob access         | oob access because linfo and jited_linfo are already advanced to prog->aux->linfo_idx                  |
+| e91370550f1fe6fa3b02e8bf9762e3dc0a02fcad | incorrect comments | comments for bpf_strnlen and bpf_strcspn contained wrong function names                                |
+| 6c1752e0b6ca8c7021d6da3926738d8d88f601a9 | memory leak        | param->string is leaked                                                                                |
+| 3d2786d65aaa954ebd3fcc033ada433e10da21c4 | memory leak        | specs is not freed if -EINVAL is returned                                                              |
+| 457f44363a8894135c85b7a9afd2bd8196db24ab | locking            | using spinlock with disabled preemption is wrong with RT kernel, raw_spinlock_t should be used instead |
+| 7a851ecb180686f9e50110247b0fcd537e772e63 | memory leak        | aof is leaked if (!aof->cnt)                                                                           |
+| 8646db238997df36c6ad71a9d7e0b52ceee221b2 | return value check | crash when btf_parse_base() returns an error pointer                                                   |
+| 6082b6c328b5486da2b356eae94b8b83c98b5565 | resource leak      | file descriptors are leaked in some error cases                                                        |
