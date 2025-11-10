@@ -1,0 +1,14 @@
+|------------------------------------------+---------------+-------------------------------------------------------------------------------------------|
+| commit                                   | bug category  | bug description                                                                           |
+|------------------------------------------+---------------+-------------------------------------------------------------------------------------------|
+| 30f6ebf65bc46161c5aaff1db2e6e7c76aa4a06b | null deref    | potential null deref in sctp_disposition sctp_sf_do_5_1D_ce()                             |
+| 2b30f8291a30305eeedcd787b4d0e352410f7268 | Makefile      | duplicate entities in Makefile                                                            |
+| ccf74f2390d60a2f9a75ef496d2564abb478f46a | memory leak   | for ISO_CONT RX the data from skb is copied to conn->rx_skb, but the skb is leaked        |
+| 510dba80ed669d6123901ccf0476706122b008b1 | units         | nl80211_chan_width_to_mhz() returns the width in MHz, but KHz are expected                |
+| 27069e7cb3d1cea9377069266acf19b9cc5ad0ae | resource leak | dst_release() is missing in mptcp_active_enable()                                         |
+| 9c10dd8eed74de9e8adeb820939f8745cd566d4a | locking       | missing rcu and dev locks for hsr_get_port_ndev                                           |
+| c5a7591172100269e426cf630da0f2dc8138a206 | locking       | hsr_for_each_port() in hsr_dev_xmit() requires rcu lock                                   |
+| d205dc40798d97d63ad348bfaf7394f445d152d4 | resource leak | potential double nf_conntrack_get() in ctnetlink_dump_table() leads to a resource leakage |
+| f8d8ce1b515a0a6af72b30502670a406cfb75073 | locking       | rcu read lock is required to iterate over &f6i->fib6_siblings                             |
+| f1fce08e63fe1a2a8b8106b93b7244a39830edae | logic         | udph->check needs to be set before calling csum_ipv6_magic()                              |
+
